@@ -1,0 +1,53 @@
+<?php
+
+
+namespace Phizzl\HeartbeatTools\Checks;
+
+
+class Options
+{
+    /**
+     * @var array
+     */
+    private $options;
+
+    public function __construct(){
+        $this->options = [];
+    }
+
+    /**
+     * @param string $name
+     * @param mixed $value
+     */
+    public function set($name, $value){
+        $this->options[(string)$name] = $value;
+    }
+
+    /**
+     * @param string $name
+     * @return bool
+     */
+    public function has($name){
+        return isset($this->options[(string)$name]);
+    }
+
+    /**
+     * @param string $name
+     * @return mixed
+     */
+    public function get($name){
+        $name = (string)$name;
+        if(!$this->has($name)){
+            throw new \InvalidArgumentException("The option {$name} has not been set");
+        }
+
+        return $this->options[$name];
+    }
+
+    /**
+     * @return array
+     */
+    public function getOptions(){
+        return $this->options;
+    }
+}
