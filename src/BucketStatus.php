@@ -46,8 +46,15 @@ class BucketStatus
     /**
      * @return array
      */
+    public function getChecks(){
+        return $this->checkResponses;
+    }
+
+    /**
+     * @return array
+     */
     public function getFailedChecks(){
-        return array_filter($this->checkResponses, function(CheckResponse $item){
+        return array_filter($this->getChecks(), function(CheckResponse $item){
             return $item->getStatus() == CheckResponse::STATUS_FAILED;
         });
     }
