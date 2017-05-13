@@ -29,11 +29,24 @@ class BucketStatus
     public function isOk(){
         $return = true;
         /* @var CheckResponse $checkResponse */
-        foreach($this->checkResponses as $checkResponse){
+        foreach($this->getChecks() as $checkResponse){
             if($checkResponse->getStatus() == CheckResponse::STATUS_FAILED){
                 $return = false;
                 break;
             }
+        }
+
+        return $return;
+    }
+
+    /**
+     * @return float|mixed
+     */
+    public function getResponseTime(){
+        $return = .0;
+        /* @var CheckResponse $checkResponse */
+        foreach($this->getChecks() as $checkResponse){
+            $return += $checkResponse->getResponseTime();
         }
 
         return $return;
