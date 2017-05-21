@@ -5,7 +5,7 @@ namespace Phizzl\HeartbeatTools\Checks\Ping;
 
 use Phizzl\HeartbeatTools\Checks\AbstractCheck;
 use Phizzl\HeartbeatTools\Checks\CheckException;
-use Phizzl\HeartbeatTools\Checks\CheckRequirements;
+use Phizzl\HeartbeatTools\Checks\Requirements\Requirement;
 
 class PingCheck extends AbstractCheck
 {
@@ -18,14 +18,18 @@ class PingCheck extends AbstractCheck
         parent::__construct();
         $this->factory = new PingFactory();
 
-        $this->requirements->addRequiredOption("host", CheckRequirements::TYPE_STRING);
+        $this->requirements->addRequirement(new Requirement("host", Requirement::TYPE_NOTEMPTY));
+        $this->requirements->addRequirement(new Requirement("host", Requirement::TYPE_STRING));
+
+        $this->options->set('ttl', 255);
+        $this->options->set('timeout', 10);
     }
 
     /**
      * @throws CheckException
      * @return bool
      */
-    protected function check(){
+    public function run(){
         $ping = $this->factory->create($this->options);
 
         if($ping->ping() === false){

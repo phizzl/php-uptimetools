@@ -6,7 +6,7 @@ namespace Phizzl\HeartbeatTools\Checks\Tcp;
 
 use Phizzl\HeartbeatTools\Checks\AbstractCheck;
 use Phizzl\HeartbeatTools\Checks\CheckException;
-use Phizzl\HeartbeatTools\Checks\CheckRequirements;
+use Phizzl\HeartbeatTools\Checks\Requirements\Requirement;
 use Phizzl\NetworkTools\Tcp\Tcp;
 
 class TcpPortCheck extends AbstractCheck
@@ -20,24 +20,27 @@ class TcpPortCheck extends AbstractCheck
         parent::__construct();
         $this->tcp = new Tcp();
 
-        $this->requirements->addRequiredOption("host", CheckRequirements::TYPE_STRING);
-        $this->requirements->addRequiredOption("port", CheckRequirements::TYPE_INT);
+        $this->requirements->addRequirement(new Requirement("host", Requirement::TYPE_NOTEMPTY));
+        $this->requirements->addRequirement(new Requirement("host", Requirement::TYPE_STRING));
+        $this->requirements->addRequirement(new Requirement("port", Requirement::TYPE_NOTEMPTY));
+        $this->requirements->addRequirement(new Requirement("port", Requirement::TYPE_INTEGER));
+
+        $this->options->set('timeout', 10);
     }
 
     /**
      * @throws CheckException
      * @return bool
      */
-    protected function check(){
+    public function run(){
         $this->tcp->setHost($this->options->get('host'));
         $this->tcp->setPort($this->options->get('port'));
-
-        if($this->options->has('timeout')){
-            $this->tcp->setTimeout($this->options->get('timeout'));
-        }
+        $this->tcp->setTimeout($this->options->get('timeout'));
 
         if(!$this->tcp->send()){
-            throw new CheckException("Cannot connect to port \"{$this->options->get('port')}\". {$tcp->getErrstr()} ({$tcp->getErrno()})");
+            throw new CheckException(
+                "Cannot connect to port \"{$this->options->get('port')}\"."
+                . "{$this->tcp->getErrstr()} ({$this->tcp->getErrno()})");
         }
 
         return true;

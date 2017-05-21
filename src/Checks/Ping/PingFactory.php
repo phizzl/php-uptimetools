@@ -2,21 +2,20 @@
 
 namespace Phizzl\HeartbeatTools\Checks\Ping;
 
-
-use Phizzl\HeartbeatTools\Checks\Options;
+use Phizzl\HeartbeatTools\Options\OptionsInterface;
 use Phizzl\NetworkTools\Ping\Ping;
 
 class PingFactory
 {
     /**
-     * @param Options $options
+     * @param OptionsInterface $options
      * @return Ping
      */
-    public function create(Options $options){
+    public function create(OptionsInterface $options){
         return new Ping(
             $options->get('host'),
-            $options->has('ttl') ? $options->get('ttl') : 255,
-            $options->has('timeout') ? $options->get('ttl') : 10
+            $options->get('ttl'),
+            $options->get('timeout')
         );
     }
 }

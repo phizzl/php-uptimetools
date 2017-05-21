@@ -1,13 +1,22 @@
 <?php
 
-namespace Phizzl\HeartbeatTools\Options\Requirements;
+namespace Phizzl\HeartbeatTools\Checks\Requirements;
 
-
-use Phizzl\HeartbeatTools\Checks\Options;
+use Phizzl\HeartbeatTools\Options\OptionsInterface;
 use Phizzl\HeartbeatTools\Validators\ValidatorFactory;
 
 class Requirement
 {
+    const TYPE_ARRAY = ValidatorFactory::TYPE_ARRAY;
+
+    const TYPE_FLOAT = ValidatorFactory::TYPE_FLOAT;
+
+    const TYPE_INTEGER = ValidatorFactory::TYPE_INTEGER;
+
+    const TYPE_STRING = ValidatorFactory::TYPE_STRING;
+
+    const TYPE_NOTEMPTY = ValidatorFactory::TYPE_NOTEMPTY;
+
     /**
      * @var string
      */
@@ -44,10 +53,10 @@ class Requirement
     }
 
     /**
-     * @param mixed $value
+     * @param OptionsInterface $options
      * @return bool
      */
-    public function requirementsMet(Options $options){
+    public function requirementsMet(OptionsInterface $options){
         $validator = $this->validatorFactory->create($this->type);
         return $validator->isValid($options->get($this->optionName));
     }

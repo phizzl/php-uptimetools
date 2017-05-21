@@ -4,7 +4,7 @@
 namespace Phizzl\HeartbeatTools\Options;
 
 
-class Options
+class Options implements OptionsInterface
 {
     /**
      * @var array
@@ -43,7 +43,7 @@ class Options
     /**
      * @return array
      */
-    public function getOptions(){
+    public function all(){
         return $this->options;
     }
 }

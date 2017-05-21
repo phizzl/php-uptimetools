@@ -4,8 +4,6 @@
 namespace Phizzl\HeartbeatTools\Buckets;
 
 
-use Phizzl\HeartbeatTools\Checks\CheckInterface;
-
 class Bucket
 {
     /**
@@ -18,12 +16,22 @@ class Bucket
      */
     private $checks;
 
+    private $dispatcher;
+
     /**
      * CheckBucket constructor.
      */
     public function __construct(){
         $this->name = "";
         $this->checks = new CheckBag();
+        $this->dispatcher = new BucketDispatcher();
+    }
+
+    /**
+     * @param BucketDispatcher $dispatcher
+     */
+    public function setDispatcher(BucketDispatcher $dispatcher){
+        $this->dispatcher = $dispatcher;
     }
 
     /**
@@ -52,5 +60,9 @@ class Bucket
      */
     public function getChecks(){
         return $this->checks;
+    }
+
+    public function run(){
+        return $this->dispatcher->dispatch($this);
     }
 }

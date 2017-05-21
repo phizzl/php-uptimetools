@@ -16,6 +16,8 @@ class ValidatorFactory
 
     const TYPE_NOTEMPTY = "notempty";
 
+    const TYPE_REQUIREMENTS = "requirements";
+
     /**
      * @param string $type
      * @return TypeValidatorInterface
@@ -27,6 +29,7 @@ class ValidatorFactory
             case self::TYPE_INTEGER: $validator = new IntegerValidator(); break;
             case self::TYPE_STRING: $validator = new StringValidator(); break;
             case self::TYPE_NOTEMPTY: $validator = new NotEmptyValidator(); break;
+            case self::TYPE_REQUIREMENTS: $validator = new RequirementValidator(); break;
             default: throw new \InvalidArgumentException("Type \"$type\" is not supported");
         }
 

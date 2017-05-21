@@ -3,8 +3,7 @@
 
 namespace Phizzl\HeartbeatTools\Checks\HttpKeyword;
 
-
-use Phizzl\HeartbeatTools\Checks\Options;
+use Phizzl\HeartbeatTools\Options\OptionsInterface;
 use Phizzl\NetworkTools\Http\HttpHeader;
 use Phizzl\NetworkTools\Http\HttpOptions;
 use Phizzl\NetworkTools\Http\HttpRequest;
@@ -12,10 +11,10 @@ use Phizzl\NetworkTools\Http\HttpRequest;
 class HttpRequestFactory
 {
     /**
-     * @param Options $options
+     * @param OptionsInterface $options
      * @return HttpRequest
      */
-    public function create(Options $options){
+    public function create(OptionsInterface $options){
         $httpHeader = new HttpHeader();
         $httpOptions = new HttpOptions();
         $httpRequest = new HttpRequest();
