@@ -10,7 +10,8 @@
     }
   ],
   "require": {
-    "phizzl/networktools": "dev-master"
+    "phizzl/networktools": "dev-master",
+    "codeception/codeception": "^2.2"
   },
   "autoload": {
     "psr-4": {"Phizzl\\HeartbeatTools\\": "src/"}
