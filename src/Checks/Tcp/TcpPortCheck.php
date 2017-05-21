@@ -1,20 +1,24 @@
 <?php
 
 
-namespace Phizzl\HeartbeatTools\Checks;
+namespace Phizzl\HeartbeatTools\Checks\Tcp;
 
 
-use Phizzl\NetworkTools\Http\HttpHeader;
-use Phizzl\NetworkTools\Http\HttpOptions;
-use Phizzl\NetworkTools\Http\HttpRequest;
-use Phizzl\NetworkTools\Ping\Ping;
+use Phizzl\HeartbeatTools\Checks\AbstractCheck;
+use Phizzl\HeartbeatTools\Checks\CheckException;
+use Phizzl\HeartbeatTools\Checks\CheckRequirements;
 use Phizzl\NetworkTools\Tcp\Tcp;
-use Psr\Http\Message\ResponseInterface;
 
 class TcpPortCheck extends AbstractCheck
 {
+    /**
+     * @var Tcp
+     */
+    private $tcp;
+
     public function __construct(){
         parent::__construct();
+        $this->tcp = new Tcp();
 
         $this->requirements->addRequiredOption("host", CheckRequirements::TYPE_STRING);
         $this->requirements->addRequiredOption("port", CheckRequirements::TYPE_INT);
@@ -25,15 +29,14 @@ class TcpPortCheck extends AbstractCheck
      * @return bool
      */
     protected function check(){
-        $tcp = new Tcp();
-        $tcp->setHost($this->options->get('host'));
-        $tcp->setPort($this->options->get('port'));
+        $this->tcp->setHost($this->options->get('host'));
+        $this->tcp->setPort($this->options->get('port'));
 
         if($this->options->has('timeout')){
-            $tcp->setTimeout($this->options->get('timeout'));
+            $this->tcp->setTimeout($this->options->get('timeout'));
         }
 
-        if(!$tcp->send()){
+        if(!$this->tcp->send()){
             throw new CheckException("Cannot connect to port \"{$this->options->get('port')}\". {$tcp->getErrstr()} ({$tcp->getErrno()})");
         }
 
