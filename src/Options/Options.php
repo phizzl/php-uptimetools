@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Phizzl\HeartbeatTools\Checks;
+namespace Phizzl\HeartbeatTools\Options;
 
 
 class Options
@@ -33,15 +33,11 @@ class Options
 
     /**
      * @param string $name
+     * @param null|mixed $default
      * @return mixed
      */
-    public function get($name){
-        $name = (string)$name;
-        if(!$this->has($name)){
-            throw new \InvalidArgumentException("The option {$name} has not been set");
-        }
-
-        return $this->options[$name];
+    public function get($name, $default = null){
+        return $this->has($name) ? $this->options[$name] : $default;
     }
 
     /**
