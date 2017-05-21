@@ -7,6 +7,7 @@ namespace Phizzl\HeartbeatTools\Checks;
 use Phizzl\HeartbeatTools\Checks\HttpKeyword\HttpKeywordCheck;
 use Phizzl\HeartbeatTools\Checks\Ping\PingCheck;
 use Phizzl\HeartbeatTools\Checks\Tcp\TcpPortCheck;
+use Phizzl\HeartbeatTools\Options\Options;
 
 class CheckFactory
 {
