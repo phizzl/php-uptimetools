@@ -25,7 +25,7 @@ class TcpPortCheck extends AbstractCheck
         $this->requirements->addRequirement(new Requirement("port", Requirement::TYPE_NOTEMPTY));
         $this->requirements->addRequirement(new Requirement("port", Requirement::TYPE_INTEGER));
 
-        $this->options->set('timeout', 10);
+        $this->options->set('timeout', 30);
     }
 
     /**

@@ -4,7 +4,7 @@
 namespace Phizzl\HeartbeatTools\Checks;
 
 
-use Phizzl\HeartbeatTools\Context\DispatchedCheckContext;
+use Phizzl\HeartbeatTools\Contexts\DispatchedCheckContext;
 
 class DispatchedCheck
 {

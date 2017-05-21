@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Phizzl\HeartbeatTools\Context;
+namespace Phizzl\HeartbeatTools\Contexts;
 
 
 use Phizzl\HeartbeatTools\Checks\CheckInterface;

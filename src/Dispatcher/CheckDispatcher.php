@@ -38,7 +38,7 @@ class CheckDispatcher
             $dispatchedCheck->setReturnValue($returnValue);
             $dispatchedCheck->setStatus(DispatchedCheck::STATUS_SUCCESS);
         }
-        catch(CheckException $e){
+        catch(\Exception $e){
             $dispatchedCheck->setMessage($e->getMessage());
             $dispatchedCheck->setStatus(DispatchedCheck::STATUS_FAILED);
         }
