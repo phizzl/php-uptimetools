@@ -19,15 +19,20 @@ class CheckFactory
 
     /**
      * @param string $type
-     * @param Options $options
+     * @param array $parameter
      * @return CheckInterface
      */
-    public function create($type, Options $options){
+    public function create($type, array $parameter){
         switch($type){
             case self::TYPE_HTTPKEYWORDS: $check = new HttpKeywordCheck(); break;
             case self::TYPE_PING: $check = new PingCheck(); break;
             case self::TYPE_TCP: $check = new TcpPortCheck(); break;
             default: throw new \InvalidArgumentException("Type \"$type\" is not supported");
+        }
+
+        $options = new Options();
+        foreach($parameter as $name => $value){
+            $options->set($name, $value);
         }
 
         $check->setOptions($options);
