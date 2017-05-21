@@ -4,6 +4,8 @@
 namespace Phizzl\HeartbeatTools\Buckets;
 
 
+use Phizzl\HeartbeatTools\Dispatcher\BucketDispatcher;
+
 class Bucket
 {
     /**
