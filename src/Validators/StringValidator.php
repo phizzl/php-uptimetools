@@ -4,13 +4,13 @@
 namespace Phizzl\HeartbeatTools\Validators;
 
 
-class FloatValidator implements TypeValidatorInterface
+class StringValidator implements TypeValidatorInterface
 {
     /**
      * @param mixed $value
      * @return bool
      */
     public function isValid($value){
-        return is_float($value);
+        return is_string($value);
     }
 }
