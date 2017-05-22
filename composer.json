@@ -10,7 +10,9 @@
     }
   ],
   "require": {
-    "phizzl/networktools": "dev-master",
+    "phizzl/networktools": "dev-master"
+  },
+  "require-dev": {
     "codeception/codeception": "^2.2"
   },
   "autoload": {
