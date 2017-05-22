@@ -39,7 +39,7 @@ class TcpPortCheck extends AbstractCheck
 
         if(!$this->tcp->send()){
             throw new CheckException(
-                "Cannot connect to port \"{$this->options->get('port')}\"."
+                "Cannot connect to port \"{$this->options->get('host')}:{$this->options->get('port')}\"."
                 . "{$this->tcp->getErrstr()} ({$this->tcp->getErrno()})");
         }
 
