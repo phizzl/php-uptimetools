@@ -33,11 +33,13 @@ class Options implements OptionsInterface
 
     /**
      * @param string $name
-     * @param null|mixed $default
      * @return mixed
      */
-    public function get($name, $default = null){
-        return $this->has($name) ? $this->options[$name] : $default;
+    public function get($name){
+        if(!$this->has($name)){
+            throw new \InvalidArgumentException("\"{$name}\" is not set");
+        }
+        return $this->options[(string)$name];
     }
 
     /**
