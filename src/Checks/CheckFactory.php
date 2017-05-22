@@ -30,7 +30,7 @@ class CheckFactory
             default: throw new \InvalidArgumentException("Type \"$type\" is not supported");
         }
 
-        $options = new Options();
+        $options = $check->getOptions() ? $check->getOptions() : new Options();
         foreach($parameter as $name => $value){
             $options->set($name, $value);
         }
