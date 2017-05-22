@@ -22,10 +22,9 @@ interface OptionsInterface
 
     /**
      * @param string $name
-     * @param null|mixed $default
      * @return mixed
      */
-    public function get($name, $default = null);
+    public function get($name);
 
     /**
      * @return array
