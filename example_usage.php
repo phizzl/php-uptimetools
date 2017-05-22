@@ -27,10 +27,12 @@ $bucket->getChecks()->addCheck($checkFactory->create(CheckFactory::TYPE_PING, [
 $dispatchedBucket = $bucket->run();
 
 echo "Checks took {$dispatchedBucket->getDispatchedChecks()}s\n";
+echo "--------------------------------------\n";
 /* @var DispatchedCheck $dispatchedCheck */
 foreach($dispatchedBucket->getSucceededDispatchedChecks() as $dispatchedCheck){
     echo "Success: " . get_class($dispatchedCheck->getContext()->getCheck()) . PHP_EOL;
     echo "Executed in: {$dispatchedCheck->getDispatchTime()}s\n";
+    echo "--------------------------------------\n";
 }
 
 /* @var DispatchedCheck $dispatchedCheck */
@@ -38,6 +40,7 @@ foreach($dispatchedBucket->getFailedDispatchedChecks() as $dispatchedCheck){
     echo "Failed: " . get_class($dispatchedCheck->getContext()->getCheck()) . PHP_EOL;
     echo "Executed in: {$dispatchedCheck->getDispatchTime()}s\n";
     echo "Message: {$dispatchedCheck->getMessage()}\n";
+    echo "--------------------------------------\n";
 }
 
 if($dispatchedBucket->getStatus() === DispatchedBucket::STATUS_SUCCESS){
