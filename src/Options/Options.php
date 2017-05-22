@@ -37,7 +37,7 @@ class Options implements OptionsInterface
      */
     public function get($name){
         if(!$this->has($name)){
-            throw new \InvalidArgumentException("\"{$name}\" is not set");
+            throw new \InvalidArgumentException("Parameter \"{$name}\" is not set");
         }
         return $this->options[(string)$name];
     }
