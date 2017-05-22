@@ -26,7 +26,7 @@ $bucket->getChecks()->addCheck($checkFactory->create(CheckFactory::TYPE_PING, [
 
 $dispatchedBucket = $bucket->run();
 
-echo "Checks took {$dispatchedBucket->getDispatchedChecks()}s\n";
+echo "Checks took {$dispatchedBucket->getDispatchTime()}s\n";
 echo "--------------------------------------\n";
 /* @var DispatchedCheck $dispatchedCheck */
 foreach($dispatchedBucket->getSucceededDispatchedChecks() as $dispatchedCheck){
