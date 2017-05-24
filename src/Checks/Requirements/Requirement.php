@@ -1,9 +1,9 @@
 <?php
 
-namespace Phizzl\HeartbeatTools\Checks\Requirements;
+namespace Phizzl\UptimeTools\Checks\Requirements;
 
-use Phizzl\HeartbeatTools\Options\OptionsInterface;
-use Phizzl\HeartbeatTools\Validators\ValidatorFactory;
+use Phizzl\UptimeTools\Options\OptionsInterface;
+use Phizzl\UptimeTools\Validators\ValidatorFactory;
 
 class Requirement
 {

@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Phizzl\HeartbeatTools\Checks\Ping;
+namespace Phizzl\UptimeTools\Checks\Ping;
 
-use Phizzl\HeartbeatTools\Checks\AbstractCheck;
-use Phizzl\HeartbeatTools\Checks\CheckException;
-use Phizzl\HeartbeatTools\Checks\Requirements\Requirement;
+use Phizzl\UptimeTools\Checks\AbstractCheck;
+use Phizzl\UptimeTools\Checks\CheckException;
+use Phizzl\UptimeTools\Checks\Requirements\Requirement;
 
 class PingCheck extends AbstractCheck
 {

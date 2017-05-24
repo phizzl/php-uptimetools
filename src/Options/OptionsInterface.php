@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Phizzl\HeartbeatTools\Options;
+namespace Phizzl\UptimeTools\Options;
 
 
 interface OptionsInterface

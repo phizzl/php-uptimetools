@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Phizzl\HeartbeatTools\Contexts;
+namespace Phizzl\UptimeTools\Contexts;
 
 
-use Phizzl\HeartbeatTools\Checks\CheckInterface;
+use Phizzl\UptimeTools\Checks\CheckInterface;
 
 class DispatchedCheckContext
 {

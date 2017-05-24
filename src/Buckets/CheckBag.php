@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Phizzl\HeartbeatTools\Buckets;
+namespace Phizzl\UptimeTools\Buckets;
 
 
-use Phizzl\HeartbeatTools\Checks\CheckInterface;
+use Phizzl\UptimeTools\Checks\CheckInterface;
 
 class CheckBag
 {

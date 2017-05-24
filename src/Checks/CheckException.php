@@ -1,6 +1,6 @@
 <?php
 
-namespace Phizzl\HeartbeatTools\Checks;
+namespace Phizzl\UptimeTools\Checks;
 
 
 class CheckException extends \Exception

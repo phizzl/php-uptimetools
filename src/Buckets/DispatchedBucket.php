@@ -1,9 +1,9 @@
 <?php
 
-namespace Phizzl\HeartbeatTools\Buckets;
+namespace Phizzl\UptimeTools\Buckets;
 
 
-use Phizzl\HeartbeatTools\Checks\DispatchedCheck;
+use Phizzl\UptimeTools\Checks\DispatchedCheck;
 
 class DispatchedBucket
 {

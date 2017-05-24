@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Phizzl\HeartbeatTools\Checks\Requirements;
+namespace Phizzl\UptimeTools\Checks\Requirements;
 
 
 class RequirementBag

@@ -1,13 +1,13 @@
 <?php
 
-namespace Phizzl\HeartbeatTools\Dispatcher;
+namespace Phizzl\UptimeTools\Dispatcher;
 
 
 
 
-use Phizzl\HeartbeatTools\Buckets\Bucket;
-use Phizzl\HeartbeatTools\Buckets\DispatchedBucket;
-use Phizzl\HeartbeatTools\Validators\BucketValidator;
+use Phizzl\UptimeTools\Buckets\Bucket;
+use Phizzl\UptimeTools\Buckets\DispatchedBucket;
+use Phizzl\UptimeTools\Validators\BucketValidator;
 
 class BucketDispatcher
 {

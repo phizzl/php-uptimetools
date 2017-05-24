@@ -1,12 +1,11 @@
 <?php
 
-namespace Phizzl\HeartbeatTools\Dispatcher;
+namespace Phizzl\UptimeTools\Dispatcher;
 
 
-use Phizzl\HeartbeatTools\Buckets\CheckBag;
-use Phizzl\HeartbeatTools\Checks\CheckException;
-use Phizzl\HeartbeatTools\Checks\CheckInterface;
-use Phizzl\HeartbeatTools\Checks\DispatchedCheck;
+use Phizzl\UptimeTools\Buckets\CheckBag;
+use Phizzl\UptimeTools\Checks\CheckInterface;
+use Phizzl\UptimeTools\Checks\DispatchedCheck;
 
 class CheckDispatcher
 {

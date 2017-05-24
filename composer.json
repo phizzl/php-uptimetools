@@ -16,6 +16,6 @@
     "codeception/codeception": "^2.2"
   },
   "autoload": {
-    "psr-4": {"Phizzl\\HeartbeatTools\\": "src/"}
+    "psr-4": {"Phizzl\\UptimeTools\\": "src/"}
   }
 }

@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Phizzl\HeartbeatTools\Checks;
+namespace Phizzl\UptimeTools\Checks;
 
 
-use Phizzl\HeartbeatTools\Checks\Requirements\RequirementBag;
-use Phizzl\HeartbeatTools\Options\Options;
-use Phizzl\HeartbeatTools\Options\OptionsInterface;
+use Phizzl\UptimeTools\Checks\Requirements\RequirementBag;
+use Phizzl\UptimeTools\Options\Options;
+use Phizzl\UptimeTools\Options\OptionsInterface;
 
 abstract class AbstractCheck implements CheckInterface
 {

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Phizzl\HeartbeatTools\Validators;
+namespace Phizzl\UptimeTools\Validators;
 
 
 class ValidatorFactory

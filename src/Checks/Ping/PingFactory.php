@@ -1,8 +1,8 @@
 <?php
 
-namespace Phizzl\HeartbeatTools\Checks\Ping;
+namespace Phizzl\UptimeTools\Checks\Ping;
 
-use Phizzl\HeartbeatTools\Options\OptionsInterface;
+use Phizzl\UptimeTools\Options\OptionsInterface;
 use Phizzl\NetworkTools\Ping\Ping;
 
 class PingFactory

@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Phizzl\HeartbeatTools\Validators;
+namespace Phizzl\UptimeTools\Validators;
 
 
-use Phizzl\HeartbeatTools\Buckets\Bucket;
+use Phizzl\UptimeTools\Buckets\Bucket;
 
 class BucketValidator
 {

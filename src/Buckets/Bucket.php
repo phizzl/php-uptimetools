@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Phizzl\HeartbeatTools\Buckets;
+namespace Phizzl\UptimeTools\Buckets;
 
 
-use Phizzl\HeartbeatTools\Dispatcher\BucketDispatcher;
+use Phizzl\UptimeTools\Dispatcher\BucketDispatcher;
 
 class Bucket
 {

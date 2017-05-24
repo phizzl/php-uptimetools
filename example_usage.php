@@ -1,9 +1,9 @@
 <?php
 
-use Phizzl\HeartbeatTools\Buckets\Bucket;
-use Phizzl\HeartbeatTools\Buckets\DispatchedBucket;
-use Phizzl\HeartbeatTools\Checks\CheckFactory;
-use Phizzl\HeartbeatTools\Checks\DispatchedCheck;
+use Phizzl\UptimeTools\Buckets\Bucket;
+use Phizzl\UptimeTools\Buckets\DispatchedBucket;
+use Phizzl\UptimeTools\Checks\CheckFactory;
+use Phizzl\UptimeTools\Checks\DispatchedCheck;
 
 require_once __DIR__ . '/vendor/autoload.php';
 

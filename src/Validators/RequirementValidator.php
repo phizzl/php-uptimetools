@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Phizzl\HeartbeatTools\Validators;
+namespace Phizzl\UptimeTools\Validators;
 
 
-use Phizzl\HeartbeatTools\Checks\AbstractCheck;
-use Phizzl\HeartbeatTools\Checks\Requirements\Requirement;
+use Phizzl\UptimeTools\Checks\AbstractCheck;
+use Phizzl\UptimeTools\Checks\Requirements\Requirement;
 
 class RequirementValidator implements TypeValidatorInterface
 {

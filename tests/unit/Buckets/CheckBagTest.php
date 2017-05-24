@@ -2,7 +2,7 @@
 namespace Buckets;
 
 
-use Phizzl\HeartbeatTools\Buckets\CheckBag;
+use Phizzl\UptimeTools\Buckets\CheckBag;
 
 class CheckBagTest extends \Codeception\Test\Unit
 {
@@ -28,7 +28,7 @@ class CheckBagTest extends \Codeception\Test\Unit
 
     public function testAddCheck(){
         $testObject = new CheckBag();
-        $mockedCheck = $this->createMock('Phizzl\HeartbeatTools\Checks\AbstractCheck');
+        $mockedCheck = $this->createMock('Phizzl\UptimeTools\Checks\AbstractCheck');
 
         $testObject->addCheck($mockedCheck);
         $this->assertSame(1, count($testObject->all()));

@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Phizzl\HeartbeatTools\Checks\HttpKeyword;
+namespace Phizzl\UptimeTools\Checks\HttpKeyword;
 
-use Phizzl\HeartbeatTools\Options\OptionsInterface;
+use Phizzl\UptimeTools\Options\OptionsInterface;
 use Phizzl\NetworkTools\Http\HttpHeader;
 use Phizzl\NetworkTools\Http\HttpOptions;
 use Phizzl\NetworkTools\Http\HttpRequest;

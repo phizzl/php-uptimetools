@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Phizzl\HeartbeatTools\Checks;
+namespace Phizzl\UptimeTools\Checks;
 
 
-use Phizzl\HeartbeatTools\Checks\HttpKeyword\HttpKeywordCheck;
-use Phizzl\HeartbeatTools\Checks\Ping\PingCheck;
-use Phizzl\HeartbeatTools\Checks\Tcp\TcpPortCheck;
-use Phizzl\HeartbeatTools\Options\Options;
+use Phizzl\UptimeTools\Checks\HttpKeyword\HttpKeywordCheck;
+use Phizzl\UptimeTools\Checks\Ping\PingCheck;
+use Phizzl\UptimeTools\Checks\Tcp\TcpPortCheck;
+use Phizzl\UptimeTools\Options\Options;
 
 class CheckFactory
 {
